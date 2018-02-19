@@ -116,6 +116,8 @@ for pages in itertools.count(1):
             if 'over' in csvYr:
                 csvYr = href.split('/CSV')[0].split('/')[-1].split('-')[-1]
                 csvMth = href.split('/CSV')[0].split('/')[-1].split('-')[-2][:3]
+            if '20' not in csvYr:
+                csvYr = '20'+csvYr
             csvMth = convert_mth_strings(csvMth.upper())
             todays_date = str(datetime.now())
             data.append([csvYr, csvMth, fileurl])
